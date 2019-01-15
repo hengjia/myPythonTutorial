@@ -1,5 +1,8 @@
 # A VERY Brief Python Tutorial for EECS 486
 The aim of this tutorial is to let students quickly get familiar with Python for EECS 486 course works. [Kite](http://kite.com) is suggested.
+
+Projects are *handgraded* so PLEASE *comment your code*
+
 ## Basics
 ```python
 a = 7
@@ -13,6 +16,7 @@ text = text.strip() # "Here is Playground."
 text = text.lower() # "here is playground."
 text = text.upper() # "HERE IS PLAYGROUND."
 text = text.replace('.', '!') # "HERE IS PLAYGROUND!"
+text[0] = 'A' # Doesn't work, strings are immutable
 tokens = text.split()
 # ['HERE', 'IS', 'PLAYGROUND!']
 
@@ -44,6 +48,28 @@ print(x) # 1
 print(l + tokens) 
 # ['I', 'have', 'an', 'apple', 'pineapple', 'HERE', 'IS', 'PLAYGROUND!']
 # l.extend(tokens)
+
+# List assignment is by REFERENCE
+array = ["an","bert","cindy","dirk"]
+copyarray = array # creates a new reference “copyarray”
+copyarray[2] = "ZZZ" # changes BOTH array as well as copyarray
+
+# Any and All
+any(x > 0 for x in [-5, -2, 0, 1])  # returns True     
+any(x > 0 for x in [-15, -12, -20, -31])  # returns False
+
+all(x < 0 for x in [-5, -2, 0, 1])  # returns False     
+all(x < 0 for x in [-15, -12, -20, -31])  # returns True
+
+#filter(lambda x: CONDITION, LIST)    
+# returns a list of all items from list that satisfy some condition.
+filter(lambda x: x > 10, [1,2,4,8,16,25]) 
+# [16,25]   
+
+# map (OPERATION, LIST)  
+# perform an arbitrary operation on each element of a list.
+map(lambda x: x*2, [1,2,4,8,16,25])  
+# [2, 4, 8, 16, 32, 50]
 ```
 
 ### Loop
@@ -71,11 +97,11 @@ while(i < len(l)):
 ```python
 squares = [x ** 2 for x in range(10)]
 # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-even_squares = [x **2 for x in range(10) if x % 2 == 0]
+even_squares = [x ** 2 for x in range(10) if x % 2 == 0]
 # [0, 4, 16, 36, 64]
 ```
 
-## Map
+## Dict
 ```python
 m = {}
 for i, x in enumerate(l):
@@ -117,3 +143,34 @@ w_f = open('toWrite', 'w')
 for sentence in sorted(new_m, key = new_m.__getitem__, reverse = True):
 	w_f.write(sentence + '\n')
 ```
+
+## [Regular Expressions](https://alf.nu/RegexGolf)
+A sequence of characters that define a search pattern
+
+* \b: word boundaries 
+* \d: digits 
+* \n: newline 
+* \r: carriage return 
+* \s: white space characters 
+* \t: tab 
+* \w: alphanumeric characters 
+* ^: beginning of string 
+* $: end of string (breaks at newlines!) 
+* .: any character
+* [bdkp]: characters b, d, k and p 
+* [a-f]: characters a to f 
+* [^a-f]: all characters except a to f 
+* abc|def: string abc or string def 
+* *: zero or more times 
+* +: one or more times 
+* ?: zero or one time 
+* {p,q}: at least p times and at most q times 
+* {p,}: at least p times 
+* {p}: exactly p times 
+
+```python
+import re
+re.sub(r'foo', 'bar', 'foolish') # 'barlish'
+```
+
+
