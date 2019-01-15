@@ -1,8 +1,7 @@
-# # A VERY Brief Python Tutorial for EECS 486 Information Retrieval
----
-## [Hengjia Zhang](www.blythez.com)
-### /The aim of this tutorial is to let students quickly get familiar with Python for EECS 486 course works. KITE is suggested./
-1. Basics
+# # A VERY Brief Python Tutorial for EECS 486
+## #[Hengjia Zhang](www.blythez.com)
+ /The aim of this tutorial is to let students quickly get familiar with Python for EECS 486 course works. [Kite](kite.com) is suggested./
+## Basics
 ```python
 a = 7
 a += 2 # a = a + 2
@@ -27,7 +26,7 @@ print(b or c) #True
 print(not b) #False
 ```
 
-2. List
+## List
 ```python
 l = ['I', 'have', 'an', 'apple']
 print(l[1]) # 'have'
@@ -48,7 +47,7 @@ print(l + tokens)
 # l.extend(tokens)
 ```
 
-3. Loop
+### Loop
 ```python
 for x in l:
 	print(x)
@@ -69,7 +68,7 @@ while(i < len(l)):
 	i += 1
 ```
 
-4. List Comprehension
+## List Comprehension
 ```python
 squares = [x ** 2 for x in range(10)]
 # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
@@ -77,7 +76,7 @@ even_squares = [x **2 for x in range(10) if x % 2 == 0]
 # [0, 4, 16, 36, 64]
 ```
 
-5. Map
+## Map
 ```python
 m = {}
 for i, x in enumerate(l):
@@ -98,7 +97,7 @@ for i, x in m.items():
 	print(x)
 ```
 
-6. Function
+## Function
 ```python
 def my_func(tokens, sep = ','):
 	text = sep.join(tokens)
@@ -107,7 +106,7 @@ my_func(tokens) # "HERE,IS,PLAYGROUND!"
 my_func(tokens, sep = '!') # "HERE!IS!PLAYGROUND!"
 ```
 
-7. Read and Write
+## Read and Write
 ```python
 f = open('toRead', 'r')
 new_m = {}
