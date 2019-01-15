@@ -1,6 +1,6 @@
 # A VERY Brief Python Tutorial for EECS 486
-## [Hengjia Zhang](www.blythez.com)
-The aim of this tutorial is to let students quickly get familiar with Python for EECS 486 course works. [Kite](kite.com) is suggested.
+## [Hengjia Zhang](http://www.blythez.com)
+The aim of this tutorial is to let students quickly get familiar with Python for EECS 486 course works. [Kite](http://kite.com) is suggested.
 ## Basics
 ```python
 a = 7
